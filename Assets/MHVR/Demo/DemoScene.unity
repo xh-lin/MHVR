@@ -879,6 +879,18 @@ PrefabInstance:
       objectReference: {fileID: 1547296626}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00c7da31f3626144f83b7f1cab8ce29d, type: 3}
+--- !u!114 &1126924784 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5346937568831295670, guid: 00c7da31f3626144f83b7f1cab8ce29d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1126924783}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7a3102e98f5b3d44a1237730a0f4590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1133175664
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1280,6 +1292,18 @@ PrefabInstance:
       objectReference: {fileID: 1734957117}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00c7da31f3626144f83b7f1cab8ce29d, type: 3}
+--- !u!114 &1638105335 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5346937568831295670, guid: 00c7da31f3626144f83b7f1cab8ce29d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1638105334}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7a3102e98f5b3d44a1237730a0f4590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1734957116
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1601,6 +1625,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Interactions.Interactable_PrototypeBow
       objectReference: {fileID: 0}
+    - target: {fileID: 4350174009730998879, guid: d711d2ef7ee670b4bb71be05ae8ce51c,
+        type: 3}
+      propertyPath: elements.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350174009730998879, guid: d711d2ef7ee670b4bb71be05ae8ce51c,
+        type: 3}
+      propertyPath: elements.Array.data[0]
+      value: 
+      objectReference: {fileID: 1126924784}
+    - target: {fileID: 4350174009730998879, guid: d711d2ef7ee670b4bb71be05ae8ce51c,
+        type: 3}
+      propertyPath: elements.Array.data[1]
+      value: 
+      objectReference: {fileID: 1638105335}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d711d2ef7ee670b4bb71be05ae8ce51c, type: 3}
 --- !u!4 &2202255671721970522 stripped
