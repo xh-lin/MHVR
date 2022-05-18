@@ -29,9 +29,85 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4350174009840279163}
+  - {fileID: 5496303262196939691}
   m_Father: {fileID: 1104242380366991652}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6075009222509427977
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5496303262196939691}
+  - component: {fileID: 5262676215624918138}
+  m_Layer: 0
+  m_Name: FoldAction
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5496303262196939691
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6075009222509427977}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2497407887677616325}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5262676215624918138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6075009222509427977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fd299fedf620074b8e4ce0978a7f425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActivationStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  initialValue: 0
+  defaultValue: 0
+  sources: []
+  Activated:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4311373233910297303}
+        m_TargetAssemblyTypeName: BowController, Assembly-CSharp
+        m_MethodName: toggleFold
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  ValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  ValueUnchanged:
+    m_PersistentCalls:
+      m_Calls: []
+  Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  value: 0
 --- !u!1 &7902979398574888771
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,37 +447,37 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5610098033609883574, guid: 9131837377b4888468fd87ee543a110a,
         type: 3}
-      propertyPath: Activated.m_PersistentCalls.m_Calls.Array.size
+      propertyPath: ValueChanged.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5610098033609883574, guid: 9131837377b4888468fd87ee543a110a,
         type: 3}
-      propertyPath: Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      propertyPath: ValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5610098033609883574, guid: 9131837377b4888468fd87ee543a110a,
         type: 3}
-      propertyPath: Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: ValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4311373233910297303}
+      objectReference: {fileID: 5262676215624918138}
     - target: {fileID: 5610098033609883574, guid: 9131837377b4888468fd87ee543a110a,
         type: 3}
-      propertyPath: Activated.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      propertyPath: ValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5610098033609883574, guid: 9131837377b4888468fd87ee543a110a,
         type: 3}
-      propertyPath: Activated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: toggleFold
+      propertyPath: ValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Receive
       objectReference: {fileID: 0}
     - target: {fileID: 5610098033609883574, guid: 9131837377b4888468fd87ee543a110a,
         type: 3}
-      propertyPath: Activated.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: BowController, Assembly-CSharp
+      propertyPath: ValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Zinnia.Action.Action`3[[Zinnia.Action.BooleanAction, Zinnia.Runtime
       objectReference: {fileID: 0}
     - target: {fileID: 5610098033609883574, guid: 9131837377b4888468fd87ee543a110a,
         type: 3}
-      propertyPath: Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      propertyPath: ValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5610098034348027842, guid: 9131837377b4888468fd87ee543a110a,
