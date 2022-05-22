@@ -60,7 +60,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Draw Blend Tree
+  m_Name: Pull Blend Tree
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -202,13 +202,13 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 1
-    m_Controller: {fileID: 9100000}
-  - m_Name: drawBlend
+    m_Controller: {fileID: 0}
+  - m_Name: pullBlend
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -327,7 +327,7 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: Blend
     m_Mirror: 0
-  m_BlendParameter: drawBlend
+  m_BlendParameter: pullBlend
   m_BlendParameterY: Blend
   m_MinThreshold: 0
   m_MaxThreshold: 1
@@ -346,7 +346,7 @@ AnimatorStateTransition:
     m_ConditionEvent: isFolded
     m_EventTreshold: 0
   - m_ConditionMode: 4
-    m_ConditionEvent: drawBlend
+    m_ConditionEvent: pullBlend
     m_EventTreshold: 0.01
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 93624994946315368}
