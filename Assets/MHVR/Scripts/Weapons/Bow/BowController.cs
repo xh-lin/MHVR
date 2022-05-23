@@ -156,6 +156,24 @@ public class BowController : MonoBehaviour
             arrowInteractor.SimulateUntouch(bowInteractable);
             nockedArrow.Fire(normalizedPullDistance * stringPower);
         }
+        else if (arrowSnapZone.SnappedGameObject != null)
+        {
+            nockedArrow = arrowSnapZone.SnappedGameObject.GetComponentInChildren<ArrowController>();
+            if (nockedArrow != null)
+            {
+                ToggleColliders(bowColliders, nockedArrow.arrowColliders, true);
+                nockedArrow.ToggleColliderTrigger(true);
+
+                arrowSnapZone.Unsnap();
+                bowInteractable.Ungrab(1);
+                secondaryInteractor = bowInteractable.GrabbingInteractors.Count > 1 ? bowInteractable.GrabbingInteractors[1] : null;
+                if (secondaryInteractor != null)
+                {
+                    secondaryInteractor.SimulateUntouch(bowInteractable);
+                }
+                nockedArrow.Fire(normalizedPullDistance * stringPower);
+            }
+        }
     }
 
     private void OnEnable()
