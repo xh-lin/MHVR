@@ -65,23 +65,43 @@ public class BowController : MonoBehaviour
     private ArrowController nockedArrow;
     private InteractorFacade arrowInteractor;
 
+    private bool IsFolded
+    {
+        get { return bowAnimator.GetBool(foldAnimationParameterName); }
+        set { bowAnimator.SetBool(foldAnimationParameterName, value); }
+    }
 
     public void ToggleFold()
     {
-        if (normalizedPullDistance == 0f && !isStringGrabbed && arrowSnapZone.SnappedGameObject == null)
+        if (IsFolded)
         {
-            bowAnimator.SetBool(foldAnimationParameterName, !bowAnimator.GetBool(foldAnimationParameterName));
+            IsFolded = false;
+            arrowSnapZone.gameObject.SetActive(true);
+        }
+        else
+        {
+            if (normalizedPullDistance == 0f && !isStringGrabbed && arrowSnapZone.SnappedGameObject == null)
+            {
+                IsFolded = true;
+                arrowSnapZone.gameObject.SetActive(false);
+            }
+        }
+    }
+
+    public void GrabBow()
+    {
+        if (!IsFolded)
+        {
+            arrowSnapZone.gameObject.SetActive(true);
         }
     }
 
     public void GrabString()
     {
-        if (bowAnimator.GetBool(foldAnimationParameterName))
+        if (!IsFolded)
         {
-            return;
+            isStringGrabbed = true;
         }
-
-        isStringGrabbed = true;
     }
 
     public void UngrabString()
@@ -96,7 +116,7 @@ public class BowController : MonoBehaviour
 
     public void AttemptArrowNock(CollisionNotifier.EventData data)
     {
-        if (bowAnimator.GetBool(foldAnimationParameterName)
+        if (IsFolded
             || arrowSnapZone.SnappedGameObject != null
             || !data.ColliderData.name.Equals(arrowNockName))
         {
