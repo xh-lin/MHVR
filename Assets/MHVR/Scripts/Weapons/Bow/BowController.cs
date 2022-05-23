@@ -140,6 +140,7 @@ public class BowController : MonoBehaviour
 
     private void OnEnable()
     {
+        arrowSnapZone.gameObject.SetActive(false);
         stringRestingDistance = nockingPoint.transform.localPosition.z;
         bowColliders = bowColliderContainer.GetComponentsInChildren<Collider>();
     }
